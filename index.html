@@ -32,18 +32,24 @@
 </style>
 <body>
     
-    <img src="foguete.gif" width="80px" class="foguete" id="fufu">
-    <img class="luazinha" src="lua.png">
+    <img src="foguete.gif" onclick="Comecar();" width="80px" class="foguete" id="fufu">
+    <img class="luazinha" id="chao" src="lua.png">
 
   
 </body>
 <script src="jquery-3.6.4.min.js"></script>
 <script>
+    function Comecar()
+    {
+        temporizador= setTimeout(Subir,18000)
+    }
+
+
     // Vamos pegar o tempo inicial:
     d = new Date();
     tempo_inicial = d.getTime();
 
-    temporizador= setTimeout(Subir,1000)
+   
     x = 120
     y = 100
     ESQUERDA = ""
