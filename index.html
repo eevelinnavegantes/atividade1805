@@ -13,6 +13,8 @@
         height: 100vh;
         overflow: hidden;
         background-image: url("ceuazul.jpg");
+        background-repeat: no-repeat;
+        background-size: 100%;
     }
     .foguete
     {
@@ -28,11 +30,29 @@
         height:30vh;
         margin-top: 20px;
     }
+   
     
 </style>
 <body>
     
     <img src="foguete.gif" onclick="Comecar();" width="80px" class="foguete" id="fufu">
+
+    <audio id="audio1" autoplay="">
+        <source src="contagem_regressiva.mp3" type="audio/mp3">
+    </audio>
+
+    <audio id="audio2" autoplay="">
+        <source src="lancamento_foguete.mp3" type="audio/mp3">
+    </audio>
+
+    <audio id="audio3" autoplay="">
+        <source src="problem.mp3" type="audio/mp3">
+    </audio>
+
+    <audio id="audio3" autoplay="">
+        <source src="descendo.wav" type="audio/mp3">
+    </audio>
+
     <img class="luazinha" id="chao" src="lua.png">
 
   
@@ -41,7 +61,31 @@
 <script>
     function Comecar()
     {
-        temporizador= setTimeout(Subir,18000)
+        temporizador= setTimeout(Subir,20000)
+
+        contagem = document.getElementById('audio1');
+        contagem.play();
+
+        temporizador2 = setTimeout(Tocar2,20000)
+        temporizador3 = setTimeout(Tocar3,38000)
+        temporizador4 = setTimeout(Tocar4,55000)
+    }
+
+    function Tocar2()
+    {
+        contagem = document.getElementById('audio2');
+        contagem.play();
+    }
+    
+    function Tocar3()
+    {
+        contagem = document.getElementById('audio3');
+        contagem.play();
+    }
+    function Tocar4()
+    {
+        contagem = document.getElementById('audio4');
+        contagem.play();
     }
 
 
@@ -59,7 +103,7 @@
     {
         TOPO = y + "px"
         ESQUERDA = x + "px"
-        $("#fufu").animate({left:ESQUERDA,top:TOPO}, 2000)
+        $("#fufu").animate({left:ESQUERDA,top:TOPO}, 18000)
 
         temporizador= null // cancela a animação Subir
         temporizador= setInterval(Descer,2000)
